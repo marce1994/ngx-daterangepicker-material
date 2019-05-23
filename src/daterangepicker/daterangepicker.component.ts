@@ -35,8 +35,10 @@ export class DaterangepickerComponent implements OnInit {
     timepickerVariables: {left: any, right: any} = {left: {}, right: {}};
     daterangepicker: {start: FormControl, end: FormControl} = {start: new FormControl(), end: new FormControl()};
     applyBtn: {disabled: boolean} = {disabled: false};
-    startDate = moment().startOf('day');
-    endDate = moment().endOf('day');
+    @Input()
+    startDate: _moment.Moment = moment().startOf('day');
+    @Input()
+    endDate: _moment.Moment = moment().endOf('day');
     @Input()
     dateLimit: number = null;
     // used in template for compile time support of enum values.
